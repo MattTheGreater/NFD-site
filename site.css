@@ -350,6 +350,12 @@ header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
 .give .card h3{font-size:1.14rem;font-weight:560}
 .give .card p{color:var(--muted);font-size:.95rem}
 @media(max-width:760px){.give{grid-template-columns:1fr}}
+.readlist{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-top:2.4rem}
+@media(max-width:720px){.readlist{grid-template-columns:1fr}}
+.readitem{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1.4rem}
+.readitem h3{font-size:1.1rem;font-weight:560;line-height:1.3}
+.readitem .byline{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:.98rem;margin:.3rem 0 .6rem}
+.readitem p{color:var(--muted);font-size:.95rem}
 .contactbar{margin-top:2.4rem;border:1px solid var(--line);border-radius:4px;background:var(--surface);
   padding:clamp(1.4rem,3vw,2rem)}
 .contactbar h3{font-size:1.25rem;font-weight:560;margin-bottom:.4rem}

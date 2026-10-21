@@ -30,9 +30,16 @@ if(form&&msg){form.addEventListener("submit",function(ev){
   ev.preventDefault();
   var name=(document.getElementById("f-name").value||"").trim();
   var email=(document.getElementById("f-email").value||"").trim();
+  var help=(document.getElementById("f-help")?document.getElementById("f-help").value:"").trim();
+  var state=(document.getElementById("f-state")?document.getElementById("f-state").value:"").trim();
+  var note=(document.getElementById("f-msg")?document.getElementById("f-msg").value:"").trim();
   if(!email){msg.style.color="var(--accent)";msg.textContent="Please add an email so we can reply.";return;}
+  var to=emailEl?emailEl.textContent.trim():"AmericansAgainstNFD@gmail.com";
+  var subject="Website contact"+(name?" from "+name:"");
+  var body="Name: "+name+"\nEmail: "+email+"\nHow they would like to help: "+help+"\nState: "+state+"\n\n"+note;
+  window.location.href="mailto:"+to+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
   msg.style.color="var(--muted)";
-  msg.textContent=(name?name.split(" ")[0]+", ":"")+"thank you. Copy your note and email it to us at "+(emailEl?emailEl.textContent.trim():"our address")+" and we will reply personally.";
+  msg.textContent=(name?name.split(" ")[0]+", ":"")+"thank you. Your email app should open with your note ready to send to us.";
 });}
 
 /* state map */
